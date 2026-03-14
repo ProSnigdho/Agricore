@@ -12,11 +12,15 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 
+import os
+import sys
+from dotenv import load_dotenv
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-import os
-from dotenv import load_dotenv
+# Add backend directory to sys.path
+sys.path.insert(0, os.path.join(BASE_DIR, 'backend'))
 
 # Load .env file
 load_dotenv(os.path.join(BASE_DIR, '.env'))
