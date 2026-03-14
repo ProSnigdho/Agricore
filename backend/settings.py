@@ -22,8 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Add backend directory to sys.path
 sys.path.insert(0, os.path.join(BASE_DIR, 'backend'))
 
-# Load .env file
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+# Load .env file (now located inside backend folder)
+load_dotenv(os.path.join(BASE_DIR, 'backend', '.env'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-default-key')
